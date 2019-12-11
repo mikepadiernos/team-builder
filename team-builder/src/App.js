@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Team from "./components/Team";
 import Form from "./forms/Form";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 
@@ -17,8 +17,13 @@ function App() {
 
   return (
     <div className="App">
-      <Form/>
-      <Team team={team} />
+      <header>
+        <h1>The UN Expeditionary Force</h1>
+      </header>
+      <main>
+        <Form/>
+        <Team team={team} />
+      </main>
     </div>
   );
 }
