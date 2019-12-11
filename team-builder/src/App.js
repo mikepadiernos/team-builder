@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
+import Team from "./components/Team";
+import Form from "./forms/Form";
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
 
-  const [team, setTeam] = useState([]);
+  const [team, setTeam] = useState([
+    {
+      id: 1,
+      name: "Skippy",
+      title: "The Magnificent"
+    }
+  ]);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form/>
+      <Team team={team} />
     </div>
   );
 }
