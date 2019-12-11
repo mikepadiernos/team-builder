@@ -11,20 +11,34 @@ function App() {
     {
       id: 1,
       name: "Skippy",
-      title: "The Magnificent"
+      role: "The Magnificent",
+      email: "skippy@unef.gov"
     }
   ]);
 
+  const addNewMember = member => {
+    const newMember = {
+      id: "",
+      name: member.name,
+      role: member.role,
+      email: member.email
+    };
+
+    const newMemberList = [...team, newMember];
+
+    setTeam(newMemberList);
+  };
+
   return (
-    <div className="App">
-      <header>
+    <>
+      <header className="header header-container container">
         <h1>The UN Expeditionary Force</h1>
       </header>
-      <main>
-        <Form/>
+      <main className="content content-container container">
+        <Form addNewMember={addNewMember}/>
         <Team team={team} />
       </main>
-    </div>
+    </>
   );
 }
 
